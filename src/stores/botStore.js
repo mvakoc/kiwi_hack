@@ -3,6 +3,7 @@ import BaseStore from './baseStore'
 import BotConstants from '../constants/botConstants'
 import assign from 'object-assign'
 
+
 var _currentStateIndex = 0
 var _isInRepeatState = false;
 
@@ -31,10 +32,10 @@ const _states = [
         ]
     },
     {
-        text: "It’s currently 19 degrees during the day and the wind reaches 40 kilometers per hour."
+        text: "It’s currently 20 degrees in Porto during the day and the wind reaches 15 kilometers per hour."
     },
     {
-        text: "Sure, what about Rome? It’s 22 degrees, the wind reaches only 5 kilometers per hour. Check out this picture from your friend eating ice-cream there.",
+        text: "Sure, what about Rome? It’s 20 degrees, the wind reaches only 3 kilometers per hour. Check out this picture from your friend eating ice-cream there.",
         offers: [
             {
                 name: "@klara_fai",
@@ -42,9 +43,6 @@ const _states = [
             },
         ]
     
-    },
-    {
-        
     },
     {
         text: "Check other pictures of Rome from Instagram!",
@@ -70,7 +68,7 @@ const _states = [
         text: "No problem. Checking Face ID, I can see it’s you. Are you sure you want to purchase it? "
     },
     {
-        text: "Here is your boarding pass. I wish you nice travels.",
+        text: "Here is your boarding pass. I wish you nice travels. If you need more info. Let me know. I am always here for you.",
         offers: [
             {
                 name: "@klara_fai",
@@ -122,7 +120,7 @@ var BotStore = assign({}, BaseStore, {
                 newIndex++;
                 break
             case 1:
-                if (text.some(x => ["yes", "course", "sure", "yeah", "absolutely", "love"].indexOf(x) >= 0)) {
+                if (text.some(x => ["yes", "course", "sure", "yeah", "absolutely", "love", "interested", "totally"].indexOf(x) >= 0)) {
                     newIndex++;
                     console.log("I understand");
                 }
@@ -132,7 +130,7 @@ var BotStore = assign({}, BaseStore, {
                 }
                 break
             case 2:
-            if (text.some(x => ["yes", "course", "sure", "yeah", "absolutely", "love"].indexOf(x) >= 0)) {
+            if (text.some(x => ["weather", "cool", "good"].indexOf(x) >= 0)) {
                     newIndex++;
                     console.log("I understand");
                 }
@@ -142,7 +140,7 @@ var BotStore = assign({}, BaseStore, {
                 }
                 break
             case 3:
-                if (text.some(x => ["yes", "course", "sure", "yeah", "absolutely", "love"].indexOf(x) >= 0)) {
+                if (text.some(x => ["windy", "much", "too"].indexOf(x) >= 0)) {
                     newIndex++;
                     console.log("I understand");
                 }
@@ -152,7 +150,7 @@ var BotStore = assign({}, BaseStore, {
                 }
                 break
             case 4:
-                if (text.some(x => ["yes", "course", "sure", "yeah", "absolutely", "love"].indexOf(x) >= 0)) {
+                if (text.some(x => ["more", "pictures", "show", "see", "there", "love"].indexOf(x) >= 0)) {
                     newIndex++;
                     console.log("I understand");
                 }
@@ -162,7 +160,7 @@ var BotStore = assign({}, BaseStore, {
                 }
                 break
             case 5:
-                if (text.some(x => ["yes", "course", "sure", "yeah", "absolutely", "love"].indexOf(x) >= 0)) {
+                if (text.some(x => ["much", "tickets", "ticket", "flight", "get", "love"].indexOf(x) >= 0)) {
                     newIndex++;
                     console.log("I understand");
                 }
@@ -172,7 +170,7 @@ var BotStore = assign({}, BaseStore, {
                 }
                 break
             case 6:
-                if (text.some(x => ["yes", "course", "sure", "yeah", "absolutely", "love"].indexOf(x) >= 0)) {
+                if (text.some(x => ["Vienna", "book", "ticket", "regio", "jet", "flight", "cool"].indexOf(x) >= 0)) {
                     newIndex++;
                 }
                 else {
@@ -181,6 +179,24 @@ var BotStore = assign({}, BaseStore, {
                 }
                 break
             case 7:
+                if (text.some(x => ["yes", "absolutely", "sure", "go", "ahead", "cool"].indexOf(x) >= 0)) {
+                    newIndex++;
+                }
+                else {
+                    _isInRepeatState = true;
+                    console.log("I don't understand");
+                }
+                break
+            case 8:
+                if (text.some(x => ["joke", "fun", "story", "funny"].indexOf(x) >= 0)) {
+                    newIndex++;
+                }
+                else {
+                    _isInRepeatState = true;
+                    console.log("I don't understand");
+                }
+                break
+            case 9:
                 break
         }
 
