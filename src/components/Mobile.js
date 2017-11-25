@@ -122,7 +122,6 @@ export default class Mobile extends Component {
       this.setState({
         recognizing: true
       });
-      console.log("recognizing yes")
     };
 
     this.recognition.onend = result => {
@@ -162,7 +161,7 @@ export default class Mobile extends Component {
     var msg = new SpeechSynthesisUtterance();
     msg.text = message;
     msg.voice = voice;
-    msg.rate = .8
+    msg.rate = 1
     window.speechSynthesis.speak(msg);
   };
 }

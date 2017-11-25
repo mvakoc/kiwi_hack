@@ -12,7 +12,7 @@ const _states = [
         text: ""
     },
     {
-        text: "Good afternoon Adele, I got some travel tips for you! Are you interested?"
+        text: "Good afternoon Adele, I have some travel tips for you! Are you interested?"
     },
     {
         text: "What about traveling to Portugal? Check out these pics from Instagram!",
@@ -32,10 +32,10 @@ const _states = [
         ]
     },
     {
-        text: "It’s currently 20 degrees in Porto during the day and the wind reaches 15 kilometers per hour."
+        text: "Tomorrow it will be 20 degrees in Porto during the day and the wind will reach 15 kilometers per hour."
     },
     {
-        text: "Sure, what about Rome? It’s 20 degrees, the wind reaches only 3 kilometers per hour. Check out this picture from your friend eating ice-cream there.",
+        text: "Sure, what about Rome? It will be 20 degrees there tomorrow, the wind will reach only 3 kilometers per hour. Check out this picture from your friend eating ice cream there.",
         offers: [
             {
                 name: "@klara_fai",
@@ -57,18 +57,18 @@ const _states = [
             },
             {
                 name: "@klara_fai",
-                path: "./images/Rome4.png"
+                path: "./images/Rome4.jpg"
             },
         ]
     },
     {
-        text: "You have two options. You can fly today from Prague for 2.5k or tomorrow morning from Vienna for 1.4k including RegioJet ticket. The flight back to Prague is on Sunday at 9pm."
+        text: "You have two options. You can fly today from Prague for 2500 Czech koruna or tomorrow morning from Vienna for 1400 Czech koruna including RegioJet ticket. The flight back to Prague is on Sunday at 9pm."
     },
     {
-        text: "No problem. Checking Face ID, I can see it’s you. Are you sure you want to purchase it? "
+        text: "No problem. Checking Face ID, I can see it’s you. Are you sure you want to purchase the tickets? "
     },
     {
-        text: "Here is your boarding pass. I wish you nice travels. If you need more info. Let me know. I am always here for you.",
+        text: "Here are your tickets. I wish you nice travels. If you needed more information, let me know, I am always here for you.",
         offers: [
             {
                 name: "@klara_fai",
@@ -78,6 +78,10 @@ const _states = [
                 name: "@klara_fai",
                 path: "./images/board2.jpg"
             },
+            {
+                name: "@klara_fai",
+                path: "./images/regioJet.png"
+            }
         ]
     },
     {
@@ -130,7 +134,7 @@ var BotStore = assign({}, BaseStore, {
                 }
                 break
             case 2:
-            if (text.some(x => ["weather", "cool", "good"].indexOf(x) >= 0)) {
+            if (text.some(x => ["weather", "cool", "good", "yes"].indexOf(x) >= 0)) {
                     newIndex++;
                     console.log("I understand");
                 }
