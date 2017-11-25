@@ -1,0 +1,91 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.addMessage {
+  animation: newMessage 1s ease forwards;
+}
+
+@keyframes newMessage {
+  from {
+    max-width: 0px;
+    opacity: 0;
+  }
+  to {
+    max-width: 100px;
+    opacity: 1;
+  }
+}
+
+.slider-decorator-2 {
+  position: static !important;
+  display: flex;
+  justify-content: center;
+  transform: translateX(0) !important;
+}
+
+.slider-list {
+  height: 180px !important;
+}
+
+.slider-decorator-2 ul {
+  position: static !important;
+}
+
+.slider-decorator-2 button {
+  color: white !important;
+}
+.slider-decorator-0 {
+  display: none;
+}
+
+.slider-decorator-1 {
+  display: none;
+}
+
+.pulsate {
+  animation: pulseLoop .5s infinite;
+}
+
+@keyframes pulseLoop {
+  from {
+    transform: scale(0.4, 0.4);
+  }
+
+  50% {
+    transform: scale(0.7, 0.7);
+  }
+
+  to {
+    transform: scale(0.4, 0.4);
+  }
+}
